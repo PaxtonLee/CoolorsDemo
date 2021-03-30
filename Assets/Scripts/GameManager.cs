@@ -18,15 +18,17 @@ public class GameManager : MonoBehaviour
 
     public GameObject startbutton;
     public GameObject creditsbutton;
+    public GameObject backbutton;
     public GameObject deuteranomalybutton;
     public GameObject protanomalybutton;
     public GameObject tritanomalybutton;
     public GameObject normalbutton;
 
-
+    public GameObject credits;
     public GameObject titletext;
     public GameObject starttext;
     public GameObject creditstext;
+    public GameObject backtext;
     public GameObject deuteranomalytext;
     public GameObject protanomalytext;
     public GameObject tritanomalytext;
@@ -64,11 +66,13 @@ public class GameManager : MonoBehaviour
     {
         starttext.GetComponent<Text>().color = color1;
         creditstext.GetComponent<Text>().color = color1;
+        backtext.GetComponent<Text>().color = color1;
         deuteranomalytext.GetComponent<Text>().color = color1;
         protanomalytext.GetComponent<Text>().color = color1;
         tritanomalytext.GetComponent<Text>().color = color1;
         normaltext.GetComponent<Text>().color = color1;
         titletext.GetComponent<TextMeshProUGUI>().color = color2;
+        credits.GetComponent<TextMeshProUGUI>().color = color2;
         background.GetComponent<Image>().color = color3;
         startbutton.GetComponent<Image>().color = color4;
         creditsbutton.GetComponent<Image>().color = color4;
@@ -76,6 +80,7 @@ public class GameManager : MonoBehaviour
         protanomalybutton.GetComponent<Image>().color = color4;
         tritanomalybutton.GetComponent<Image>().color = color4;
         normalbutton.GetComponent<Image>().color = color4;
+        backbutton.GetComponent<Image>().color = color4;
     }
     
     public void deuteranomaly()
@@ -117,8 +122,30 @@ public class GameManager : MonoBehaviour
     public void startButton()
     {
         startbutton.SetActive(false);
+        creditsbutton.SetActive(false);
         titletext.SetActive(false);
+        background.SetActive(false);
         StartCoroutine(LoadYourAsyncScene("Level1"));
+    }
+
+    public void creditsButton()
+    {
+        startbutton.SetActive(false);
+        creditsbutton.SetActive(false);
+        titletext.SetActive(false);
+        background.SetActive(false);
+        credits.SetActive(true);
+        backbutton.SetActive(true);
+    }
+
+    public void backButton()
+    {
+        startbutton.SetActive(true);
+        creditsbutton.SetActive(true);
+        titletext.SetActive(true);
+        background.SetActive(true);
+        credits.SetActive(false);
+        backbutton.SetActive(false);
     }
 
     IEnumerator LoadYourAsyncScene(string Scene)
