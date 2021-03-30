@@ -18,11 +18,20 @@ public class GameManager : MonoBehaviour
 
     public GameObject startbutton;
     public GameObject creditsbutton;
-    public GameObject titletext;
+    public GameObject deuteranomalybutton;
+    public GameObject protanomalybutton;
+    public GameObject tritanomalybutton;
+    public GameObject normalbutton;
 
+
+    public GameObject titletext;
     public GameObject starttext;
     public GameObject creditstext;
-    
+    public GameObject deuteranomalytext;
+    public GameObject protanomalytext;
+    public GameObject tritanomalytext;
+    public GameObject normaltext;
+
     public GameObject canvas;
     public GameObject events;
     public GameObject background;
@@ -55,36 +64,55 @@ public class GameManager : MonoBehaviour
     {
         starttext.GetComponent<Text>().color = color1;
         creditstext.GetComponent<Text>().color = color1;
+        deuteranomalytext.GetComponent<Text>().color = color1;
+        protanomalytext.GetComponent<Text>().color = color1;
+        tritanomalytext.GetComponent<Text>().color = color1;
+        normaltext.GetComponent<Text>().color = color1;
         titletext.GetComponent<TextMeshProUGUI>().color = color2;
         background.GetComponent<Image>().color = color3;
         startbutton.GetComponent<Image>().color = color4;
         creditsbutton.GetComponent<Image>().color = color4;
+        deuteranomalybutton.GetComponent<Image>().color = color4;
+        protanomalybutton.GetComponent<Image>().color = color4;
+        tritanomalybutton.GetComponent<Image>().color = color4;
+        normalbutton.GetComponent<Image>().color = color4;
     }
     
-    public void setColor1(Color newcolor)
+    public void deuteranomaly()
     {
-        color1 = newcolor;
+        color1 = new Color32(242, 207, 27, 255);
+        color2 = new Color32(198, 106, 104, 255);
+        color3 = new Color32(50, 94, 158, 255);
+        color4 = new Color32(69, 121, 116, 255);
+        color5 = new Color32(255, 255, 255, 255);
+    }
+        
+    public void protanomaly()
+    {
+        color1 = new Color32(243, 212, 23, 255);
+        color2 = new Color32(201, 119, 105, 255);
+        color3 = new Color32(49, 88, 158, 255);
+        color4 = new Color32(67, 114, 115, 255);
+        color5 = new Color32(255, 255, 255, 255);
     }
 
-    public void setColor2(Color newcolor)
+    public void tritanomaly()
     {
-        color2 = newcolor;
+        color1 = new Color32(252, 140, 34, 255);
+        color2 = new Color32(226, 75, 102, 255);
+        color3 = new Color32(36, 129, 156, 255);
+        color4 = new Color32(53, 137, 117, 255);
+        color5 = new Color32(255, 255, 255, 255);
     }
 
-    public void setColor3(Color newcolor)
+    public void normal()
     {
-        color3 = newcolor;
-    }
-
-    public void setColor4(Color newcolor)
-    {
-        color4 = newcolor;
-    }
-
-    public void setColor5(Color newcolor)
-    {
-        color5 = newcolor;
-    }
+        color1 = new Color32(255, 191, 0, 255);
+        color2 = new Color32(232, 63, 111, 255);
+        color3 = new Color32(34, 116, 165, 255);
+        color4 = new Color32(50, 147, 111, 255);
+        color5 = new Color32(255, 255, 255, 255);
+}
 
     public void startButton()
     {
